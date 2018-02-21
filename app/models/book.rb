@@ -12,4 +12,12 @@ class Book < ApplicationRecord
   def lowest_rating
     reviews.lowest_rating
   end
+
+  def highest_rating_review
+    reviews.ordered_by_rating.first
+  end
+
+  def lowest_rating_review
+    reviews.ordered_by_rating.last
+  end
 end

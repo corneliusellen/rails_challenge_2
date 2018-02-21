@@ -14,7 +14,7 @@ class Review < ApplicationRecord
     minimum("rating")
   end
 
-  # def self.lowest_rating_object
-  #   select("*, minimum(:rating)")
-  # end
+  def self.ordered_by_rating
+    order("rating DESC")
+  end
 end
